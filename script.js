@@ -2,46 +2,38 @@
    GUILHERME NICASTRO — PORTFOLIO
    script.js
    ============================================================ */
-
 document.addEventListener('DOMContentLoaded', () => {
 
   /* ─── NAVBAR: sombra ao rolar ─── */
   const navbar = document.getElementById('navbar');
-
   window.addEventListener('scroll', () => {
     navbar.classList.toggle('scrolled', window.scrollY > 20);
     highlightActiveSection();
   });
 
-/* ─── MENU MOBILE ─── */
-const navToggle = document.getElementById('navToggle');
-const navMobile = document.getElementById('navMobile');
+  /* ─── MENU MOBILE ─── */
+  const navToggle = document.getElementById('navToggle');
+  const navMobile = document.getElementById('navMobile');
 
-navToggle.addEventListener('click', () => {
-  const isOpen = navMobile.classList.toggle('open');
-  // empurra o conteúdo da página para baixo quando o menu abre
-  document.body.style.paddingTop = isOpen
-    ? (60 + navMobile.offsetHeight) + 'px'
-    : '60px';
-});
-
-document.querySelectorAll('.nav-mob-link').forEach(link => {
-  link.addEventListener('click', () => {
-    navMobile.classList.remove('open');
-    document.body.style.paddingTop = '60px';
+  navToggle.addEventListener('click', () => {
+    navMobile.classList.toggle('open');
   });
-});
 
-document.addEventListener('click', (e) => {
-  if (!navMobile.contains(e.target) && !navToggle.contains(e.target)) {
-    navMobile.classList.remove('open');
-    document.body.style.paddingTop = '60px';
-  }
-});
+  document.querySelectorAll('.nav-mob-link').forEach(link => {
+    link.addEventListener('click', () => {
+      navMobile.classList.remove('open');
+    });
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!navMobile.contains(e.target) && !navToggle.contains(e.target)) {
+      navMobile.classList.remove('open');
+    }
+  });
 
   /* ─── LINK ATIVO NA NAVBAR AO ROLAR ─── */
-  const sections  = document.querySelectorAll('section[id]');
-  const navLinks  = document.querySelectorAll('.nav-links a');
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-links a');
 
   function highlightActiveSection() {
     let current = '';
@@ -57,7 +49,6 @@ document.addEventListener('click', (e) => {
 
   /* ─── REVEAL ON SCROLL ─── */
   const revealEls = document.querySelectorAll('.reveal');
-
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
