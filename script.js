@@ -13,23 +13,29 @@ document.addEventListener('DOMContentLoaded', () => {
     highlightActiveSection();
   });
 
-  /* ─── MENU MOBILE ─── */
+/* ─── MENU MOBILE ─── */
 const navToggle = document.getElementById('navToggle');
 const navMobile = document.getElementById('navMobile');
 
 navToggle.addEventListener('click', () => {
-  navMobile.classList.toggle('open');
+  const isOpen = navMobile.classList.toggle('open');
+  // empurra o conteúdo da página para baixo quando o menu abre
+  document.body.style.paddingTop = isOpen
+    ? (60 + navMobile.offsetHeight) + 'px'
+    : '60px';
 });
 
-// Fecha ao clicar em link
 document.querySelectorAll('.nav-mob-link').forEach(link => {
-  link.addEventListener('click', () => navMobile.classList.remove('open'));
+  link.addEventListener('click', () => {
+    navMobile.classList.remove('open');
+    document.body.style.paddingTop = '60px';
+  });
 });
 
-// Fecha ao clicar fora do menu
 document.addEventListener('click', (e) => {
   if (!navMobile.contains(e.target) && !navToggle.contains(e.target)) {
     navMobile.classList.remove('open');
+    document.body.style.paddingTop = '60px';
   }
 });
 

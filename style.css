@@ -619,13 +619,14 @@ section {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  align-items: flex-start;
 }
 .cta-btns .btn-white {
-  width: 100%;
+  min-width: 200px;
   justify-content: center;
 }
 .cta-btns .btn-github {
-  width: 100%;
+  min-width: 200px;
   justify-content: center;
   margin-top: 0;
 }
@@ -735,4 +736,9 @@ footer span { color: var(--blue-200); font-weight: 500; }
     padding-left: 1rem;
     padding-right: 1rem;
   }
+  /* Compensação padrão do navbar fixo */
+body {
+  padding-top: 0;
+  transition: padding-top 0.2s ease;
+}
 }
