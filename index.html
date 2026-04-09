@@ -1,112 +1,399 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Guilherme Nicastro | Desenvolvedor</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Guilherme Nicastro | Desenvolvedor</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <header>
-        <nav>
-            <h1 class="logo">Guilherme<span>.</span></h1>
-            <ul class="nav-links">
-                <li><a href="#sobre">Sobre</a></li>
-                <li><a href="#habilidades">Habilidades</a></li>
-                <li><a href="#formacao">Formação</a></li>
-                <li><a href="#projetos">Projetos</a></li>
-                <li><a href="#contato">Contato</a></li>
-            </ul>
-        </nav>
-    </header>
+  <!-- ─── NAVIGATION ─── -->
+  <nav id="navbar">
+    <a href="#" class="nav-brand">GN<span>.</span></a>
+    <ul class="nav-links">
+      <li><a href="#sobre">Sobre</a></li>
+      <li><a href="#habilidades">Habilidades</a></li>
+      <li><a href="#formacao">Formação</a></li>
+      <li><a href="#projetos">Projetos</a></li>
+      <li><a href="#contato" class="nav-cta">Contato</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
 
-    <section class="hero">
-        <div class="hero-content">
-            <h2>Olá, eu sou</h2>
-            <h1>Guilherme Almeida Nicastro</h1>
-            <h3>Programador | Desenvolvedor de Software | TI</h3>
-            <p>Foco em Python, desenvolvimento web e soluções inteligentes.</p>
-            <button onclick="scrollToSection('contato')">Entrar em Contato</button>
+  <!-- Mobile menu -->
+  <nav class="nav-mobile" id="navMobile">
+    <a href="#sobre"        class="nav-mob-link">Sobre</a>
+    <a href="#habilidades"  class="nav-mob-link">Habilidades</a>
+    <a href="#formacao"     class="nav-mob-link">Formação</a>
+    <a href="#projetos"     class="nav-mob-link">Projetos</a>
+    <a href="#contato"      class="nav-mob-link">Contato</a>
+  </nav>
+
+
+  <!-- ─── HERO ─── -->
+  <section class="hero" id="inicio">
+    <div class="hero-bg-grid"></div>
+    <div class="hero-bg-blob hero-bg-blob-1"></div>
+    <div class="hero-bg-blob hero-bg-blob-2"></div>
+
+    <div class="hero-inner">
+      <div class="hero-eyebrow">
+        <div class="hero-eyebrow-dot"></div>
+        Aberto a oportunidades
+      </div>
+
+      <h1>
+        Guilherme <span class="accent">Almeida</span>
+        <span class="line2">Nicastro</span>
+      </h1>
+
+      <p class="hero-sub">
+        Desenvolvedor de Software em formação — foco em <strong>Python</strong>,
+        desenvolvimento web e soluções inteligentes.<br>
+        Baseado em Guarulhos, SP.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#contato" class="btn-primary">
+          Entrar em contato
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <line x1="5" y1="12" x2="19" y2="12"/>
+            <polyline points="12 5 19 12 12 19"/>
+          </svg>
+        </a>
+        <a href="https://github.com/guiguinicastro" target="_blank" class="btn-secondary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+          </svg>
+          Ver GitHub
+        </a>
+      </div>
+
+      <div class="hero-stats">
+        <div>
+          <div class="hero-stat-num">2+</div>
+          <div class="hero-stat-label">Anos estudando programação</div>
         </div>
-    </section>
+        <div>
+          <div class="hero-stat-num">3+</div>
+          <div class="hero-stat-label">Projetos desenvolvidos</div>
+        </div>
+        <div>
+          <div class="hero-stat-num">4</div>
+          <div class="hero-stat-label">Linguagens / tecnologias</div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <section id="sobre" class="section">
-        <h2>Sobre Mim</h2>
-        <p>
-            Uso minha dedicação diária como combustível para atingir meus objetivos. Estou trilhando esse caminho na programação há aproximadamente dois anos; comecei com Python e, agora, almejo desafios maiores, como conquistar uma vaga em grandes empresas no mercado de trabalho. Encaro isso como uma meta e um sonho, tanto meu quanto da minha família, que acredita veementemente no meu potencial e no meu esforço para conquistar tudo o que almejo. Agradeço pelo interesse em conhecer um pouco da minha história.💪👨‍💻
+
+  <!-- ─── SOBRE ─── -->
+  <section id="sobre">
+    <div class="section-header reveal">
+      <span class="section-tag">Sobre</span>
+      <h2 class="section-title">Quem sou eu</h2>
+    </div>
+
+    <div class="sobre-grid">
+      <!-- Coluna esquerda -->
+      <div class="sobre-left reveal">
+        <div class="avatar-card">
+        <div class="avatar-circle">
+            <img src="fotoparaportfolio.jpg" alt="Guilherme Nicastro">
+        </div>
+    <div class="avatar-name">Guilherme Nicastro</div>
+    <div class="avatar-role">Desenvolvedor de Software</div>
+    </div>
+
+        <div class="info-list">
+          <div class="info-row">
+            <div class="info-icon" style="background: var(--blue-50);">📍</div>
+            <div class="info-text">
+              <div class="lbl">Localização</div>
+              <div class="val">Guarulhos — SP</div>
+            </div>
+          </div>
+          <div class="info-row">
+            <div class="info-icon" style="background: var(--teal-50);">🎓</div>
+            <div class="info-text">
+              <div class="lbl">Formação</div>
+              <div class="val">Eng. Software — ENIAC</div>
+            </div>
+          </div>
+          <div class="info-row">
+            <div class="info-icon" style="background: var(--purple-50);">💼</div>
+            <div class="info-text">
+              <div class="lbl">Disponibilidade</div>
+              <div class="val">Imediata</div>
+            </div>
+          </div>
+          <div class="info-row">
+            <div class="info-icon" style="background: var(--gray-50);">✉️</div>
+            <div class="info-text">
+              <div class="lbl">E-mail</div>
+              <div class="val" style="font-size:12.5px;">almeidanicastroguilherme<br>@gmail.com</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Coluna direita -->
+      <div class="sobre-right">
+        <p class="reveal">
+          Uso minha <strong>dedicação diária</strong> como combustível para atingir meus objetivos.
+          Estou trilhando esse caminho na programação há aproximadamente dois anos — comecei com
+          Python e, desde então, expandi meu repertório para desenvolvimento web com HTML, CSS e JavaScript.
         </p>
-    </section>
-
-    <section id="habilidades" class="section">
-        <h2>Competências</h2>
-        <div class="cards">
-            <div class="card">
-                <h3>Linguagens</h3>
-                <p>Python (ênfase), HTML, CSS, JavaScript (básico)</p>
-            </div>
-            <div class="card">
-                <h3>Ferramentas</h3>
-                <p>VS Code, Git, GitHub, Google Colab</p>
-            </div>
-            <div class="card">
-                <h3>Soft Skills</h3>
-                <p>Pensamento lógico, organização, proatividade e aprendizado ágil.</p>
-            </div>
-            <div class="card">
-                <h3>Metodologias</h3>
-                <p>Familiaridade com metodologias ágeis e versionamento de código.</p>
-            </div>
+        <p class="reveal reveal-d1">
+          Almejo desafios maiores, como conquistar uma vaga em grandes empresas no mercado de tecnologia.
+          Encaro isso como uma meta e um sonho, tanto meu quanto da minha família, que
+          <strong>acredita no meu potencial</strong> e no meu esforço para conquistar tudo o que almejo.
+        </p>
+        <p class="reveal reveal-d2">
+          Embora ainda não possua experiência profissional formal, tenho grande
+          <strong>disposição para absorção de conhecimentos</strong> — o que garante uma adaptação
+          rápida e eficiente às demandas de qualquer equipe.
+        </p>
+        <div class="sobre-highlight reveal reveal-d3">
+          <p>"Agradeço pelo interesse em conhecer um pouco da minha história. Estou pronto para o próximo desafio." 💪</p>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <section id="formacao" class="section dark">
-        <h2>Formação Acadêmica</h2>
-        <p><strong>Colégio Bonvenuto</strong> - Ensino Médio (3º ano)</p>
-        <p>Modalidade Bilíngue | Foco em ENEM e Tecnologia</p>
-        <p>Participação em aulas online voltadas à área de TI</p>
-        <p><strong>ENIAC</strong> - Matriculado no ENIAC  (1º semestre)</p>
-        <p>Curso de Engenharia de Software | área de banco de dados e programação</p>
-        <p>inclui projetos semanais intuitivos e didáticos,</p>
-        <p>durante o processo de graduação.</p>
-        <p><strong>Não possuo nenhuma experiência profissional</strong> - porém tenho uma grande disposição quando o assunto é</p>
-        <p>absorção de conhecimentos, então isso não seria um problema para a minha adaptação ao mercado de trabalho conforme a demanda requisitada.</p>
-        
-    </section>
 
-    <section id="projetos" class="section">
-        <h2>Projetos</h2>
-        <div class="cards">
-            <div class="card">
-                <h3>Scripts em Python</h3>
-                <p>Desenvolvimento de automações e soluções voltadas à performance.</p>
-            </div>
-            <div class="card">
-                <h3>Projetos Escolares</h3>
-                <p>Foco em lógica computacional e estrutura de dados.</p>
-            </div>
-            <div class="card">
-                <h3>Páginas Web</h3>
-                <p>Criação de páginas web para aprendizado de front-end.</p>
-            </div>
+  <!-- ─── HABILIDADES ─── -->
+  <section id="habilidades">
+    <div class="section-header reveal">
+      <span class="section-tag">Competências</span>
+      <h2 class="section-title">Habilidades técnicas &amp; soft skills</h2>
+    </div>
+
+    <div class="skills-grid">
+      <div class="skill-card reveal">
+        <div class="skill-icon" style="background: var(--blue-50);">💻</div>
+        <div class="skill-card-title">Linguagens</div>
+        <div class="tags">
+          <span class="tag tag-blue">Python</span>
+          <span class="tag tag-blue">HTML</span>
+          <span class="tag tag-blue">CSS</span>
+          <span class="tag tag-blue">JavaScript</span>
         </div>
-    </section>
+      </div>
 
-    <section id="contato" class="section dark">
-        <h2>Contato</h2>
-        <p>📍 Guarulhos - SP</p>
-        <p>📞 (11) 94795-6702</p>
-        <p>📧 almeidanicastroguilherme@gmail.com</p>
-        <button onclick="showMessage()">Enviar Mensagem</button>
-        <p id="msg"></p>
-        <p>💻 Aqui está o link do meu GitHub: <a href="https://github.com/guiguinicastro" target="_blank">github.com/guiguinicastro</a></p>
-    </section>
+      <div class="skill-card reveal reveal-d1">
+        <div class="skill-icon" style="background: var(--teal-50);">🛠️</div>
+        <div class="skill-card-title">Ferramentas</div>
+        <div class="tags">
+          <span class="tag tag-teal">VS Code</span>
+          <span class="tag tag-teal">Git</span>
+          <span class="tag tag-teal">GitHub</span>
+          <span class="tag tag-teal">Google Colab</span>
+        </div>
+      </div>
 
-    <footer>
-        <p>© 2026 Guilherme Nicastro | Desenvolvido com HTML, CSS e JavaScript</p>
-    </footer>
+      <div class="skill-card reveal reveal-d2">
+        <div class="skill-icon" style="background: var(--purple-50);">⚡</div>
+        <div class="skill-card-title">Soft Skills</div>
+        <div class="tags">
+          <span class="tag tag-purple">Pensamento lógico</span>
+          <span class="tag tag-purple">Organização</span>
+          <span class="tag tag-purple">Proatividade</span>
+          <span class="tag tag-purple">Aprendizado ágil</span>
+        </div>
+      </div>
 
-<script src="script.js"></script>
+      <div class="skill-card reveal reveal-d3">
+        <div class="skill-icon" style="background: var(--gray-50);">📋</div>
+        <div class="skill-card-title">Metodologias</div>
+        <div class="tags">
+          <span class="tag tag-gray">Metodologias ágeis</span>
+          <span class="tag tag-gray">Versionamento</span>
+          <span class="tag tag-gray">Git Flow</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ─── FORMAÇÃO ─── -->
+  <section id="formacao">
+    <div class="section-header reveal">
+      <span class="section-tag">Formação</span>
+      <h2 class="section-title">Trajetória acadêmica</h2>
+    </div>
+
+    <div class="timeline">
+      <div class="timeline-item reveal">
+        <div class="timeline-dot-wrap">
+          <div class="timeline-dot">🎓</div>
+        </div>
+        <div class="timeline-body">
+          <div class="timeline-period">2025 — Presente</div>
+          <div class="timeline-title">Engenharia de Software</div>
+          <div class="timeline-org">ENIAC — 1º semestre</div>
+          <div class="timeline-desc">
+            Cursando graduação com foco em banco de dados e programação. O curso inclui projetos
+            semanais práticos e didáticos ao longo de todo o processo de graduação, consolidando
+            fundamentos técnicos de forma aplicada.
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-item reveal reveal-d1">
+        <div class="timeline-dot-wrap">
+          <div class="timeline-dot">📚</div>
+        </div>
+        <div class="timeline-body">
+          <div class="timeline-period">2022 — 2025</div>
+          <div class="timeline-title">Ensino Médio — Modalidade Bilíngue</div>
+          <div class="timeline-org">Colégio Bonvenuto</div>
+          <div class="timeline-desc">
+            Formação bilíngue com foco em ENEM e Tecnologia. Participação em aulas online voltadas
+            à área de TI, o que despertou o interesse pela programação e pelo desenvolvimento de software.
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-item reveal reveal-d2">
+        <div class="timeline-dot-wrap">
+          <div class="timeline-dot">🚀</div>
+        </div>
+        <div class="timeline-body">
+          <div class="timeline-period">Contínuo</div>
+          <div class="timeline-title">Desenvolvimento Autodidata</div>
+          <div class="timeline-org">Aprendizado independente</div>
+          <div class="timeline-desc">
+            Dois anos de estudo autônomo em Python, desenvolvimento web e lógica de programação.
+            Construção de projetos pessoais, automações e páginas web para consolidar o aprendizado
+            de forma prática e consistente.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ─── PROJETOS ─── -->
+  <section id="projetos">
+    <div class="section-header reveal">
+      <span class="section-tag">Projetos</span>
+      <h2 class="section-title">O que já desenvolvi</h2>
+    </div>
+
+    <div class="projects-grid">
+      <div class="project-card reveal">
+        <div class="project-icon" style="background: var(--blue-50);">🐍</div>
+        <div class="project-title">Scripts em Python</div>
+        <div class="project-desc">
+          Desenvolvimento de automações e soluções voltadas à performance e produtividade,
+          aplicando lógica computacional e boas práticas de código.
+        </div>
+        <span class="project-badge tag-blue tag">Python</span>
+      </div>
+
+      <div class="project-card reveal reveal-d1">
+        <div class="project-icon" style="background: var(--teal-50);">🏫</div>
+        <div class="project-title">Projetos Acadêmicos</div>
+        <div class="project-desc">
+          Trabalhos com foco em lógica computacional, estrutura de dados e resolução de problemas
+          práticos propostos ao longo da graduação e do ensino médio.
+        </div>
+        <span class="project-badge tag-teal tag">Acadêmico</span>
+      </div>
+
+      <div class="project-card reveal reveal-d2">
+        <div class="project-icon" style="background: var(--purple-50);">🌐</div>
+        <div class="project-title">Páginas Web</div>
+        <div class="project-desc">
+          Criação de interfaces e páginas web para aprendizado de front-end, incluindo este
+          portfólio — desenvolvido inteiramente com HTML, CSS e JavaScript.
+        </div>
+        <span class="project-badge tag-purple tag">Front-end</span>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ─── CONTATO ─── -->
+  <section id="contato">
+    <div class="section-header reveal">
+      <span class="section-tag">Contato</span>
+      <h2 class="section-title">Vamos conversar?</h2>
+    </div>
+
+    <div class="contact-grid">
+      <!-- Informações -->
+      <div class="contact-items">
+        <div class="contact-item reveal">
+          <div class="contact-icon" style="background: var(--blue-50);">📍</div>
+          <div>
+            <div class="contact-lbl">Localização</div>
+            <div class="contact-val">Guarulhos — SP, Brasil</div>
+          </div>
+        </div>
+
+        <div class="contact-item reveal reveal-d1">
+          <div class="contact-icon" style="background: var(--teal-50);">📞</div>
+          <div>
+            <div class="contact-lbl">Telefone</div>
+            <div class="contact-val">(11) 94795-6702</div>
+          </div>
+        </div>
+
+        <div class="contact-item reveal reveal-d2">
+          <div class="contact-icon" style="background: var(--purple-50);">✉️</div>
+          <div>
+            <div class="contact-lbl">E-mail</div>
+            <div class="contact-val">almeidanicastroguilherme@gmail.com</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA card -->
+      <div class="contact-cta-card reveal reveal-d1">
+        <h3>Disponível para oportunidades!</h3>
+        <p>
+          Estou buscando minha primeira experiência profissional na área de tecnologia.
+          Se você tem uma vaga, projeto ou desafio onde posso colaborar e crescer, adoraria
+          conversar. Respondo rapidamente por e-mail ou telefone.
+        </p>
+        <div class="cta-btns">
+          <a href="mailto:almeidanicastroguilherme@gmail.com" class="btn-white">
+            Enviar e-mail
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <line x1="5" y1="12" x2="19" y2="12"/>
+              <polyline points="12 5 19 12 12 19"/>
+            </svg>
+          </a>
+          <a href="https://github.com/guiguinicastro" target="_blank" class="btn-github">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+            </svg>
+            github.com/guiguinicastro
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ─── FOOTER ─── -->
+  <footer>
+    <p>© 2026 <span>Guilherme Nicastro</span> — Desenvolvido com HTML, CSS e JavaScript</p>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="script.js"></script>
+
 </body>
 </html>

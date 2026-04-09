@@ -1,12 +1,58 @@
-function scrollToSection(id) {
-    document.getElementById(id).scrollIntoView({
-        behavior: "smooth"
-    });
-}
+/* ============================================================
+   GUILHERME NICASTRO — PORTFOLIO
+   script.js
+   ============================================================ */
 
-function showMessage() {
-    const msg = document.getElementById("msg");
-    msg.innerText = "Obrigado pelo contato! Em breve retornarei.";
-    msg.style.marginTop = "15px";
-    msg.style.color = "#38bdf8";
-}
+document.addEventListener('DOMContentLoaded', () => {
+
+  /* ─── NAVBAR: sombra ao rolar ─── */
+  const navbar = document.getElementById('navbar');
+
+  window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 20);
+    highlightActiveSection();
+  });
+
+  /* ─── MENU MOBILE ─── */
+  const navToggle = document.getElementById('navToggle');
+  const navMobile = document.getElementById('navMobile');
+
+  navToggle.addEventListener('click', () => {
+    navMobile.classList.toggle('open');
+  });
+
+  document.querySelectorAll('.nav-mob-link').forEach(link => {
+    link.addEventListener('click', () => navMobile.classList.remove('open'));
+  });
+
+  /* ─── LINK ATIVO NA NAVBAR AO ROLAR ─── */
+  const sections  = document.querySelectorAll('section[id]');
+  const navLinks  = document.querySelectorAll('.nav-links a');
+
+  function highlightActiveSection() {
+    let current = '';
+    sections.forEach(sec => {
+      if (window.scrollY >= sec.offsetTop - 100) current = sec.id;
+    });
+    navLinks.forEach(a => {
+      a.style.color = a.getAttribute('href') === '#' + current
+        ? 'var(--blue-700)'
+        : '';
+    });
+  }
+
+  /* ─── REVEAL ON SCROLL ─── */
+  const revealEls = document.querySelectorAll('.reveal');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+
+  revealEls.forEach(el => observer.observe(el));
+
+});
