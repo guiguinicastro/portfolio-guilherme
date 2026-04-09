@@ -14,16 +14,24 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   /* ─── MENU MOBILE ─── */
-  const navToggle = document.getElementById('navToggle');
-  const navMobile = document.getElementById('navMobile');
+const navToggle = document.getElementById('navToggle');
+const navMobile = document.getElementById('navMobile');
 
-  navToggle.addEventListener('click', () => {
-    navMobile.classList.toggle('open');
-  });
+navToggle.addEventListener('click', () => {
+  navMobile.classList.toggle('open');
+});
 
-  document.querySelectorAll('.nav-mob-link').forEach(link => {
-    link.addEventListener('click', () => navMobile.classList.remove('open'));
-  });
+// Fecha ao clicar em link
+document.querySelectorAll('.nav-mob-link').forEach(link => {
+  link.addEventListener('click', () => navMobile.classList.remove('open'));
+});
+
+// Fecha ao clicar fora do menu
+document.addEventListener('click', (e) => {
+  if (!navMobile.contains(e.target) && !navToggle.contains(e.target)) {
+    navMobile.classList.remove('open');
+  }
+});
 
   /* ─── LINK ATIVO NA NAVBAR AO ROLAR ─── */
   const sections  = document.querySelectorAll('section[id]');

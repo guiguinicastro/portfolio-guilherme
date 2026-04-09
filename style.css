@@ -131,13 +131,16 @@ nav.scrolled { box-shadow: var(--shadow-sm); }
 }
 
 .nav-mobile {
-  display: none; position: fixed;
+  display: none;
+  position: fixed;
   top: 60px; left: 0; right: 0;
+  z-index: 998;
   background: rgba(255,255,255,0.98);
   backdrop-filter: blur(14px);
   border-bottom: 1px solid rgba(0,0,0,0.08);
-  padding: 1rem 2rem 1.5rem; z-index: 998;
-  flex-direction: column; gap: 0.75rem;
+  padding: 1rem 2rem 1.5rem;
+  flex-direction: column;
+  gap: 0.75rem;
 }
 .nav-mobile.open { display: flex; }
 .nav-mobile a {
@@ -611,7 +614,21 @@ section {
   font-weight: 300; line-height: 1.75;
   margin-bottom: 1.75rem;
 }
-.cta-btns { display: flex; flex-direction: column; gap: 0; }
+
+.cta-btns {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.cta-btns .btn-white {
+  width: 100%;
+  justify-content: center;
+}
+.cta-btns .btn-github {
+  width: 100%;
+  justify-content: center;
+  margin-top: 0;
+}
 
 /* ─── FOOTER ─── */
 footer {
