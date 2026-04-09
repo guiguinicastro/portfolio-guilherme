@@ -646,16 +646,76 @@ footer span { color: var(--blue-200); font-weight: 500; }
 @media (max-width: 768px) {
   .nav-links { display: none; }
   .nav-toggle { display: flex; }
+
+  /* FIX: menu mobile não sobrepõe mais o conteúdo */
+  .nav-mobile {
+    position: fixed;
+    top: 60px;
+    left: 0; right: 0;
+    z-index: 997;
+    background: rgba(255,255,255,0.98);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid rgba(0,0,0,0.08);
+  }
+
+  /* FIX: título menor no mobile para não cortar */
+  .hero h1 {
+    font-size: clamp(2.2rem, 11vw, 3.2rem);
+    letter-spacing: -1px;
+  }
+  .hero h1 .line2 {
+    -webkit-text-stroke: 1.5px var(--blue-200);
+  }
+
+  /* FIX: botões do hero empilhados corretamente */
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .hero-actions a {
+    text-align: center;
+    justify-content: center;
+  }
+
+  /* FIX: stats do hero mais compactos */
+  .hero-stats {
+    gap: 1.2rem;
+    flex-wrap: wrap;
+  }
+  .hero-stat-num { font-size: 1.5rem; }
+  .hero-stat-label { font-size: 11px; }
+
   .sobre-grid { grid-template-columns: 1fr; }
   .sobre-left { display: flex; flex-direction: column; align-items: center; text-align: center; }
   .contact-grid { grid-template-columns: 1fr; }
-  .hero h1 .line2 { -webkit-text-stroke: 1.5px var(--blue-200); }
-  .hero-stats { gap: 1.5rem; }
   .timeline::before { left: 17px; }
-  section { padding: 4rem 1.5rem; }
+  section { padding: 4rem 1.25rem; }
+
+  /* FIX: eyebrow badge não quebra linha */
+  .hero-eyebrow {
+    font-size: 10px;
+    padding: 5px 12px;
+    white-space: nowrap;
+  }
 }
+
 @media (max-width: 480px) {
   .projects-grid { grid-template-columns: 1fr; }
   .skills-grid { grid-template-columns: 1fr 1fr; }
-  .hero h1 { letter-spacing: -1px; }
+
+  /* FIX: título ainda menor em telas muito pequenas */
+  .hero h1 {
+    font-size: clamp(1.9rem, 10vw, 2.5rem);
+    letter-spacing: -0.5px;
+  }
+
+  /* FIX: padding lateral menor */
+  section { padding: 3rem 1rem; }
+  nav { padding: 0 1rem; }
+
+  /* FIX: hero com menos padding */
+  .hero {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
 }
